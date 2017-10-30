@@ -1,0 +1,29 @@
+#+SETUPFILE: ../org-templates/level-0.org
+#+TITLE: Impressum
+
+** Angaben gemäß § 5 TMG:
+   :PROPERTIES:
+   :CUSTOM_ID: angaben-gemäß-5-tmg
+   :END:
+
+Bastian Brinkmann
+
+Martin-Luther-Straße 32
+
+70372 Stuttgart
+
+Telefon: +49 (0) 176 458 733 63
+
+E-Mail: [[mailto:kontakt@bookhacker.org][kontakt@bookhacker.org]]
+
+
+** Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:
+   :PROPERTIES:
+   :CUSTOM_ID: verantwortlich-für-den-inhalt-nach-55-abs.-2-rstv
+   :END:
+
+Bastian Brinkmann
+
+Martin-Luther-Straße 32
+
+70372 Stuttgart
