@@ -1,0 +1,59 @@
+#+SETUPFILE: ../../org-templates/level-1.org
+#+TITLE: dired als FTP-Client aka mehrere Dateien und Ordner per FTP hochladen
+#+STARTUP: showall
+#+DATE: 2017-11-06 23:08
+#+OPTIONS: toc:t
+
+#+BEGIN_PREVIEW
+Webseiten per [[http:/orgmode][org-mode]] zu erzeugen ist ja gut und schön, nur: Wie bekommt man die Dateien per [[https://www.gnu.org/software/emacs][Emacs]] auf den entfernten Server?
+
+Unter "normalen" Bedingungen würde ich für so was einfach [[https://filezilla-project.org][FileZilla]] verwenden. Da ich auf meiner lokalen Maschine alles mit Emacs erledige und darüber hinaus [[https://www.x.org][kein X (GUI)]], keine Desktop Environment und keinen Window-Manager verwende, bleibt nur der Weg über die Kommandozeilentools - oder eben halt: Emacs.
+#+END_PREVIEW
+
+Um per org-mode erstellte Webseiten auf den Server zu laden, [[http://orgmode.org/manual/Uploading-files.html][empfiehlt die org-mode Dokumentation]] [[https://rsync.samba.org][rsync]] oder [[https://www.cis.upenn.edu/~bcpierce/unison/][Unison]] zu verwenden. Würde ich ja gern machen, nur: Mein Webhoster erlaubt mir leider kein rsync. Der einzige Weg scheint über FTP zu führen. Dafür benutze ich den in Emacs enthaltenen Datei-Manager [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Dired.html][dired]].
+
+** FTP per dired
+
+Die Emacs-Dokumentation schreibt zum [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Remote-Files.html][Thema "Remote Files"]], dass der Zugriff auf entfernte Rechner per
+
+#+BEGIN_QUOTE
+- /host:filename
+- /user@host:filename
+- /user@host#port:filename
+- /method:user@host:filename
+- /method:user@host#port:filename
+#+END_QUOTE
+
+möglich ist und Emacs die Zugriffsmethode ssh, ftp und wie sie alle heißen, per
+
+#+BEGIN_QUOTE
+1. If the host name starts with ‘ftp.’ (with dot), Emacs uses FTP. 
+2. If the user name is ‘ftp’ or ‘anonymous’, Emacs uses FTP. 
+3. If the variable tramp-default-method is set to ‘ftp’, Emacs uses FTP. 
+4. If ssh-agent is running, Emacs uses scp. 
+5. Otherwise, Emacs uses ssh. 
+#+END_QUOTE
+
+ermittelt. Bei mir hat davon leider gar nichts funktioniert, so dass allein
+
+#+BEGIN_QUOTE
+You can always specify in the file name which method to use—for example, /ftp:user@host:filename uses FTP, whereas /ssh:user@host:filename uses ssh.
+#+END_QUOTE
+
+bei mir zum Erfolg geführt hat.
+
+** Ordner und Dateien rekursiv per FTP übertragen mit dired
+
+Um dired als FTP-Client zu verwenden und z. B. mehrere Dateien/Ordner rekursiv zu übertragen, greift man per
+
+#+BEGIN_SRC
+/ftp:BENUTZERNAME@DOMAIN.TLD:/ORDNERNAME/
+#+END_SRC
+
+auf das entfernte Verzeichnis zu.
+
+** Beispiel: Übertragen der bookhacker.org-Webseite auf den entfernten Server
+
+Nehmen wir mal an, mein Benutzername wäre =mustermann=, meine Domäne hieße =bookhacker.org= und mein Ordner auf dem entfernten Rechner hieße =/web/=.
+
+Habe ich meine Webseite [[https://bookhacker.org][bookhacker.org]] neu erzeugt und will sie auf den Server übertragen, starte ich dired per ~M-x dired~, wechsle in mein aus den org-files erzeugtes Verzeichnis "\~/org/websites/bookhacker.org/public_html/", markiere alle zu kopierenden Dateien und Ordner per ~m~, drücke ~C~ (großes ~C~) zum Kopieren und wähle als Zielverzeichnis ~/ftp:mustermann@bookhacker.org:/web/~ aus. Nach Eingabe von Passwort und Beantwortung einiger Fragen zum rekursiven Kopieren befinden sich meine Dateien anschließend auf dem Server.
