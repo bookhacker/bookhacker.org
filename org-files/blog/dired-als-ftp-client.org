@@ -40,7 +40,7 @@ ermittelt. Bei mir hat davon leider gar nichts funktioniert, so dass allein
 You can always specify in the file name which method to use—for example, =/ftp:user@host:filename= uses FTP, whereas =/ssh:user@host:filename= uses ssh.
 #+END_QUOTE
 
-bei zum Erfolg geführt hat.
+zum Erfolg geführt hat.
 
 ** Ordner und Dateien rekursiv per FTP übertragen mit dired
 
