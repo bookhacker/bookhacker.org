@@ -40,7 +40,7 @@ ermittelt. Bei mir hat davon leider gar nichts funktioniert, so dass allein
 You can always specify in the file name which method to use—for example, /ftp:user@host:filename uses FTP, whereas /ssh:user@host:filename uses ssh.
 #+END_QUOTE
 
-bei mir zum Erfolg geführt hat.
+bei zum Erfolg geführt hat.
 
 ** Ordner und Dateien rekursiv per FTP übertragen mit dired
 
@@ -56,4 +56,4 @@ auf das entfernte Verzeichnis zu.
 
 Nehmen wir mal an, mein Benutzername wäre =mustermann=, meine Domäne hieße =bookhacker.org= und mein Ordner auf dem entfernten Rechner hieße =/web/=.
 
-Habe ich meine Webseite [[https://bookhacker.org][bookhacker.org]] neu erzeugt und will sie auf den Server übertragen, starte ich dired per ~M-x dired~, wechsle in mein aus den org-files erzeugtes Verzeichnis "\~/org/websites/bookhacker.org/public_html/", markiere alle zu kopierenden Dateien und Ordner per ~m~, drücke ~C~ (großes ~C~) zum Kopieren und wähle als Zielverzeichnis ~/ftp:mustermann@bookhacker.org:/web/~ aus. Nach Eingabe von Passwort und Beantwortung einiger Fragen zum rekursiven Kopieren befinden sich meine Dateien anschließend auf dem Server.
+Habe ich meine Webseite [[https://bookhacker.org][bookhacker.org]] neu erzeugt und will sie auf den Server übertragen, starte ich dired per ~M-x dired~, wechsle in mein aus den org-files erzeugtes Verzeichnis "\~/org/websites/bookhacker.org/public__html/", markiere alle zu kopierenden Dateien und Ordner per ~m~, drücke ~C~ (großes ~C~) zum Kopieren und wähle als Zielverzeichnis ~/ftp:mustermann@bookhacker.org:/web/~ aus. Nach Eingabe von Passwort und Beantwortung einiger Fragen zum rekursiven Kopieren befinden sich meine Dateien anschließend auf dem Server.
