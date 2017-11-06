@@ -10,9 +10,9 @@ Webseiten per [[http:/orgmode][org-mode]] zu erzeugen ist ja gut und schön, nur
 Unter "normalen" Bedingungen würde ich für so was einfach [[https://filezilla-project.org][FileZilla]] verwenden. Da ich auf meiner lokalen Maschine alles mit Emacs erledige und darüber hinaus [[https://www.x.org][kein X (GUI)]], keine Desktop Environment und keinen Window-Manager verwende, bleibt nur der Weg über die Kommandozeilentools - oder eben halt: Emacs.
 #+END_PREVIEW
 
-Um per org-mode erstellte Webseiten auf den Server zu laden, [[http://orgmode.org/manual/Uploading-files.html][empfiehlt die org-mode Dokumentation]] [[https://rsync.samba.org][rsync]] oder [[https://www.cis.upenn.edu/~bcpierce/unison/][Unison]] zu verwenden. Würde ich ja gern machen, nur: Mein Webhoster erlaubt mir leider kein rsync. Der einzige Weg scheint über FTP zu führen. Dafür benutze ich den in Emacs enthaltenen Datei-Manager [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Dired.html][dired]].
-
 ** FTP per dired
+
+Um per org-mode erstellte Webseiten auf den Server zu laden, [[http://orgmode.org/manual/Uploading-files.html][empfiehlt die org-mode Dokumentation]] [[https://rsync.samba.org][rsync]] oder [[https://www.cis.upenn.edu/~bcpierce/unison/][Unison]] zu verwenden. Würde ich ja gern machen, nur: Mein Webhoster erlaubt mir leider kein rsync. Der einzige Weg scheint über FTP zu führen. Dafür benutze ich den in Emacs enthaltenen Datei-Manager [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Dired.html][dired]].
 
 Die Emacs-Dokumentation schreibt zum [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Remote-Files.html][Thema "Remote Files"]], dass der Zugriff auf entfernte Rechner per
 
@@ -56,4 +56,4 @@ auf das entfernte Verzeichnis zu.
 
 Nehmen wir mal an, mein Benutzername wäre =mustermann=, meine Domäne hieße =bookhacker.org= und mein Ordner auf dem entfernten Rechner hieße =/web/=.
 
-Habe ich meine Webseite [[https://bookhacker.org][bookhacker.org]] neu erzeugt und will sie auf den Server übertragen, starte ich dired per ~M-x dired~, wechsle in mein aus den org-files erzeugtes Verzeichnis "\~/org/websites/bookhacker.org/public_html/", markiere alle zu kopierenden Dateien und Ordner per ~m~, drücke ~C~ (großes ~C~) zum Kopieren und wähle als Zielverzeichnis ~/ftp:mustermann@bookhacker.org:/web/~ aus. Nach Eingabe von Passwort und Beantwortung einiger Fragen zum rekursiven Kopieren befinden sich meine Dateien anschließend auf dem Server.
+Habe ich meine Webseite [[https://bookhacker.org][bookhacker.org]] neu erzeugt und will sie auf den Server übertragen, starte ich dired per ~M-x dired~, wechsle in mein aus den org-files erzeugtes Verzeichnis "\~/org/websites/bookhacker.org/public_html/", markiere alle zu kopierenden Dateien und Ordner per ~m~, drücke ~C~ (großes ~C~) zum Kopieren und gebe als Zielverzeichnis ~/ftp:mustermann@bookhacker.org:/web/~ ein. Nach Eingabe von Passwort und Beantwortung einiger Fragen zum rekursiven Kopieren befinden sich meine Dateien anschließend auf dem Server.
