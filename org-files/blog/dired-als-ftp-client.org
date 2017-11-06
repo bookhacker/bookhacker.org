@@ -37,7 +37,7 @@ möglich ist und Emacs die Zugriffsmethode ssh, ftp und wie sie alle heißen, pe
 ermittelt. Bei mir hat davon leider gar nichts funktioniert, so dass allein
 
 #+BEGIN_QUOTE
-You can always specify in the file name which method to use—for example, /ftp:user@host:filename uses FTP, whereas /ssh:user@host:filename uses ssh.
+You can always specify in the file name which method to use—for example, =/ftp:user@host:filename= uses FTP, whereas =/ssh:user@host:filename= uses ssh.
 #+END_QUOTE
 
 bei zum Erfolg geführt hat.
