@@ -233,3 +233,9 @@ code {
     font-family: Inconsolata, monospace;
     border: 1px solid #d1d1d1;
 }
+
+.org-src-container {
+    background-color: lavender;
+    border: 2px solid;
+    border-color: grey;
+}
