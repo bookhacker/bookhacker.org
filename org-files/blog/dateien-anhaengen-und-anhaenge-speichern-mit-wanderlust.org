@@ -1,0 +1,22 @@
+#+SETUPFILE: ../../org-templates/level-1.org
+#+TITLE: Dateien anhängen und Anhänge speichern mit WanderLust
+#+STARTUP: showall
+#+DATE: 2017-11-07 22:03
+
+#+BEGIN_PREVIEW
+Der [[https://www.emacswiki.org/emacs/WanderLust][WanderLust]] eMail-Client ist manchmal nicht ganz leicht zu durchschauen. Wer Anhänge versenden oder speichern möchte, führt die folgenden Schritte aus:
+#+END_PREVIEW
+
+** Dateien anhängen
+
+Zum Dateien anhängen dient die Funktionen =M-x mime-edit-insert-file= (alternativ aufzurufen per =C-c C-x TAB=).
+
+Nach Auswahl der anzuhängenden Datei kann man die Vorschläge für "content type", "content subtype" und "transfer encoding" normalerweise per =RET= übernehmen.
+
+Anschließend befindet sich der Anhang an der Stelle, an der sich der Cursor befindet, weswegen es sich anbietet, den Anhang entweder am Anfang oder am Ende der Mail einzufügen.
+
+** Anhänge speichern
+
+Um Anhänge zu speichern, setzt man den Cursor in der Nachrichten-Ansicht (MIME-View) auf den Dateinamen (oder die Zeile des Anhangs) und drückt =v=.
+
+Nach Bestätigung, dass wir die Datei speichern möchten und Auswahl des Speicherortes befindet sich der Anhang anschließend auf der Platte.
