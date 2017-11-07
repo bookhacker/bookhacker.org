@@ -2,7 +2,6 @@
 #+TITLE: dired als FTP-Client aka mehrere Dateien und Ordner per FTP hochladen
 #+STARTUP: showall
 #+DATE: 2017-11-06 23:08
-#+OPTIONS: toc:t
 
 #+BEGIN_PREVIEW
 Webseiten per [[http:/orgmode][org-mode]] zu erzeugen ist ja gut und schön, nur: Wie bekommt man die Dateien per [[https://www.gnu.org/software/emacs][Emacs]] auf den entfernten Server?
@@ -56,4 +55,4 @@ auf das entfernte Verzeichnis zu.
 
 Nehmen wir mal an, mein Benutzername wäre =mustermann=, meine Domäne hieße =bookhacker.org= und mein Ordner auf dem entfernten Rechner hieße =/web/=.
 
-Habe ich meine Webseite [[https://bookhacker.org][bookhacker.org]] neu erzeugt und will sie auf den Server übertragen, starte ich dired per ~M-x dired~, wechsle in mein aus den org-files erzeugtes Verzeichnis "\~/org/websites/bookhacker.org/public_html/", markiere alle zu kopierenden Dateien und Ordner per ~m~, drücke ~C~ (großes ~C~) zum Kopieren und gebe als Zielverzeichnis ~/ftp:mustermann@bookhacker.org:/web/~ ein. Nach Eingabe von Passwort und Beantwortung einiger Fragen zum rekursiven Kopieren befinden sich meine Dateien anschließend auf dem Server.
+Habe ich meine Webseite [[https://bookhacker.org][bookhacker.org]] neu erzeugt und will sie auf den Server übertragen, starte ich dired per ~M-x dired~, wechsle in mein aus den org-files erzeugtes Verzeichnis "~/org/websites/bookhacker.org/public_html/", markiere alle zu kopierenden Dateien und Ordner per =m=, drücke =C= (großes =C=) zum Kopieren und gebe als Zielverzeichnis =/ftp:mustermann@bookhacker.org:/web/= ein. Nach Eingabe von Passwort und Beantwortung einiger Fragen zum rekursiven Kopieren befinden sich meine Dateien anschließend auf dem Server.
