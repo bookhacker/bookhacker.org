@@ -71,12 +71,12 @@ Anschließendes Speichern und M-x eval-buffer und die Tilde ~ lässt sich per re
 
 Anschließend lassen sich die bekannten Klammern per
 
-* [ = ALT Gr-5
-* ] = ALT Gr-6
-* |  = ALT Gr-7
-* { = ALT Gr-8
-* } = ALT Gr-9
-* \ = ALT Gr-Shift-7
++ [ = ALT Gr-5
++ ] = ALT Gr-6
++ | = ALT Gr-7
++ { = ALT Gr-8
++ } = ALT Gr-9
++ \ = ALT Gr-Shift-7
 
 ** Klammeraffe @
 
