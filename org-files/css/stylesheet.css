@@ -24,7 +24,7 @@ html {
     line-height: 54px;
     letter-spacing: -1px;
     margin-bottom: 0;
-    float: left;    
+    float: left;
 }
 
 blockquote {
@@ -44,9 +44,9 @@ cite {
 }
 
 #banner a {
-    color: #1a1a1a;
     text-decoration: none;
     font-family: inherit;
+    color: #424242;
 }
 
 #banner p {
@@ -72,12 +72,13 @@ cite {
     display:inline;
 }
 
-#banner nav a:link,#banner nav a:visited {
-    color: #1a1a1a;
-    display:inline-block;
-    height:30px;
-    text-decoration:none;
-    padding:0 .5em;
+#banner nav a:link, #banner nav a:visited {
+    display: inline-block;
+    height: 30px;
+    text-decoration: none;
+    padding: 0 .5em;
+    color: #111;
+    line-height: 1.5;
 }
 
 #content {
