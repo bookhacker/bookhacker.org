@@ -41,7 +41,6 @@ cite {
 }
 
 #banner a {
-    text-decoration: none;
     font-family: inherit;
     color: #424242;
 }
@@ -72,7 +71,6 @@ cite {
 #banner nav a:link, #banner nav a:visited {
     display: inline-block;
     height: 30px;
-    text-decoration: none;
     padding: 0 .5em;
     color: #111;
     line-height: 1.5;
@@ -173,6 +171,7 @@ a {
     text-decoration: none;
 }
 
+/*
 a:hover,
 a:focus,
 a:active {
@@ -186,6 +185,12 @@ a:focus {
 a:hover,
 a:active {
     outline: 0;
+}
+*/
+
+a:hover {
+    color:#111;
+    text-decoration:underline
 }
 
 h1,
