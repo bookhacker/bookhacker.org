@@ -1,7 +1,7 @@
 #+SETUPFILE: ../../org-templates/level-1.org
 #+TITLE: Musik hören mit Emacs und dem EMMS (Emacs Multimedia System)
 #+STARTUP: showall
-#+DATE: <2017-11-08 Mi> 23:08
+#+DATE: 2017-11-09 00:43
 
 #+BEGIN_PREVIEW
 Emacs ist bekanntlich ein Text-Editor. Und was liegt näher, als mit einem Text-Editor Musik zu hören? Wie das geht, steht hier:
