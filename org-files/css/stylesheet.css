@@ -28,15 +28,12 @@ html {
 }
 
 blockquote {
-    border: 0 solid #1a1a1a;
-    border-left-width: 4px;
-    font-size: 19px;
-    font-size: 1.1875rem;
+    color: #828282;
+    border-left: 4px solid #e8e8e8;
+    padding-left: 15px;
+    font-size: 18px;
+    letter-spacing: -1px;
     font-style: italic;
-    line-height: 1.4736842105;
-    margin: 0 0 1.4736842105em;
-    padding: 0 0 0 1.263157895em;
-    font-family: Merriweather, Georgia, serif;
 }
 
 cite {
@@ -230,10 +227,11 @@ h6 {
 }
 
 code {
-    background-color: #fff;
-    padding: 0.125em 0.25em;
-    font-family: Inconsolata, monospace;
-    border: 1px solid #d1d1d1;
+    font-size: 15px;
+    border: 1px solid #e8e8e8;
+    border-radius: 3px;
+    background-color: #eef;
+    padding: 1px 5px;
 }
 
 .src {
