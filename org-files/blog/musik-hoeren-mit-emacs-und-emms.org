@@ -4,7 +4,7 @@
 #+DATE: 2017-11-09 00:43
 
 #+BEGIN_PREVIEW
-Emacs ist bekanntlich ein Text-Editor. Und was liegt näher, als mit einem Text-Editor Musik zu hören? Wie das geht, steht hier:
+[[https://www.gnu.org/software/emacs/][Emacs]] ist bekanntlich ein Text-Editor. Und was liegt näher, als mit einem Text-Editor Musik zu hören? Wie das geht, steht hier:
 #+END_PREVIEW
 
 ** Das EMMS (Emacs Multimedia System)
