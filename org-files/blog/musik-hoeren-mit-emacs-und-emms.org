@@ -1,0 +1,77 @@
+#+SETUPFILE: ../../org-templates/level-1.org
+#+TITLE: Musik hören mit Emacs und dem EMMS (Emacs Multimedia System)
+#+STARTUP: showall
+#+DATE: <2017-11-08 Mi> 23:08
+
+#+BEGIN_PREVIEW
+Emacs ist bekanntlich ein Text-Editor. Und was liegt näher, als mit einem Text-Editor Musik zu hören? Wie das geht, steht hier:
+#+END_PREVIEW
+
+** Das EMMS (Emacs Multimedia System)
+
+Das [[https://www.gnu.org/software/emms/][EMMS]] ist in der Lage, verschiedene Multimedia-Formate über verschiedene externe Player-Programme abzuspielen. Wir installieren zunächst die notwendigen Komponenten:
+
+Zunächst das EMMS selbst:
+
+#+BEGIN_SRC Shell
+M-x package-install RET emms RET
+#+END_SRC
+
+Anschließend installieren wir - falls noch nicht auf dem System vorhanden - mplayer als externen Player (über diesen spielen wir unsere Dateien ab):
+
+#+BEGIN_SRC Shell
+sudo apt-get install mplayer
+#+END_SRC
+
+Damit ich den Sound auf meinem Mac Mini unter Ubuntu Server zum Laufen bekommen konnte, musste ich noch die Alsa-Utils installieren:
+
+#+BEGIN_SRC Shell
+sudo apt-get install alsa-utils
+#+END_SRC
+
+(Dazu später mehr.)
+
+Dieser Schritt sollte aber auf den meisten Systemen überflüssig sein - schließlich schafft nicht jeder auf so Uralt-Hardware wie ich und macht sich dann auch noch ein Server-Betriebssystem drauf.
+
+** EMMS konfigurieren
+
+Ohne die richtige Konfiguration stellt sich das EMMS ziemlich doof an. Ich spare mir die vielen Worte - hier die Config (für die Emacs-Konfigurationsdatei =~/.emacs= oder =~/emacs.d/init.el= oder wo auch immer):
+
+#+BEGIN_SRC emacs-lisp
+;;; ---------------------------------------------------------
+;;; EMMS - The Emacs Multimedia System
+;;; (https://www.gnu.org/software/emms/)
+;;;
+(require 'emms-player-simple)
+(require 'emms-source-file)
+(require 'emms-source-playlist)
+(require 'emms-setup)
+(require 'emms-player-mplayer)
+(setq emms-player-list '(emms-player-mpg321
+                         emms-player-ogg123
+                         emms-player-mplayer))
+(define-emms-simple-player mplayer '(file url)
+  (regexp-opt '(".ogg" ".mp3" ".wav" ".mpg" ".mpeg" ".wmv" ".wma"
+		".mov" ".avi" ".divx" ".ogm" ".asf" ".mkv" "http://"
+		"mms://" ".rm" ".rmvb" ".mp4" ".flac" ".vob" ".m4a"
+		".flv" ".ogv" ".pls"))
+  "mplayer" "-slave" "-quiet" "-really-quiet" "-fullscreen")
+#+END_SRC
+
+
+** Erste Bedienung
+
+Anschließend sollte man - im besten Fall - über die Befehle =emms-play-file= oder =emms-play-directory-tree= etc. seine Musik "genießen" können. Weitere erste wichtige Befehle sind
+
++ =emms-volume-raise= - Musik kann nie zu laut sein
++ =emms-volume-lower= - Falls die Musik doch zu laut sein sollte
++ =emms-next= - Zum nächsten Song skippen
++ =emms-previous= - Zum vorherigen Song skippen
+
+Wer weitere Infos über das [[https://www.gnu.org/software/emms/][EMMS]] benötigt, den verweise ich an dieser Stelle auf das [[https://www.emacswiki.org/emacs/EMMS][EmacsWiki]].
+
+** Bonus: Soundkarte des Mac Mini unter Ubuntu Server zum Laufen bekommen
+
+Auf meinem Mac Mini, auf dem ich ein minimales Ubuntu Server installiert habe, waren noch ein paar weitere Schritte notwendig, um die Soundkarte "zum Sprechen" zu bringen (wozu braucht ein Server-Betriebssystem auch Sound?).
+
+Glücklicherweise hat sich das Ganze bei mir auf den einfachen Befehl =sudo amixer sset 'Master' unmute= reduziert. Wer weitere Infos zu dem Thema braucht, wird [[https://www.ionas-server.com/blog/aktivierung-der-soundausgabe-unter-ubuntu-server/][hier]] fündig (ein herzliches Dankeschön an dieser Stelle).

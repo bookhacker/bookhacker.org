@@ -245,3 +245,8 @@ code {
     border-radius: 3px;
     background-color: #eef;
 }
+
+.post-date {
+    font-size: 14px;
+    color: #828282;
+}
