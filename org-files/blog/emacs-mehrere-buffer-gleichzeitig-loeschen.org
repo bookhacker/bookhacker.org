@@ -7,8 +7,12 @@
 Hat man sich erst mal angewöhnt, [[https://www.gnu.org/software/emacs][Emacs]] quasi nie zu schließen, sammeln sich bei jeder Session unzählige geöffnete Buffer an. Um mehrere nicht mehr benötigte Buffer gleichzeitig zu löschen (killen), geht man folgendermaßen vor:
 #+END_PREVIEW
 
-** Buffer-Menü aufrufen
+** Buffer löschen mit dem Buffer-Menü
 
-Über =M-x buffer-menu= lässt sich das Buffer-Menü aufrufen. Hier können alle Buffer, die gelöscht werden sollen, mit =d= (=u= zum demarkieren) zum Löschen markiert werden (ein =D= erscheint vor den zu löschenden Buffern). Um das Löschen durchzuführen, drückt man =x= (execute).
+Über =M-x buffer-menu= lässt sich das Buffer-Menü aufrufen.
+
+Hier können alle Buffer, die gelöscht werden sollen, mit =d= (=u= zum demarkieren) zum Löschen markiert werden (ein =D= erscheint vor den zu löschenden Buffern).
+
+Um das Löschen durchzuführen, drückt man =x= (execute).
 
 Siehe auch: [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Several-Buffers.html][Operating on Several Buffers]].
