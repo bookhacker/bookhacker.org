@@ -1,0 +1,35 @@
+#+SETUPFILE: ../../org-templates/level-1.org
+#+TITLE: Dateien von einem dired-Fenster ins andere kopieren
+#+STARTUP: showall
+#+DATE: <2017-11-10 Fr 21:29>
+
+#+BEGIN_PREVIEW
+Wäre es nicht praktisch, wenn man einfach zwei dired-Fenster nebeneinander öffnen und vom linken ins rechte kopieren könnte? Kann man. Wie, steht hier:
+#+END_PREVIEW
+
+** "Do what I mean" konfigurieren
+
+Damit dired weiß, was wir von ihm wollen, müssen wir ihm beibringen, zu tun, was wir wollen. Das geht über die Variable =dired-dwim-target=:
+
+In =~/.emacs.d/init.el= (oder =~/.emacs= oder wo auch immer die Emacs-Initialisierungsdatei sich befindet):
+
+#+BEGIN_SRC emacs-list
+(setq dired-dwim-target t)
+#+END_SRC
+
+Die Abkürzung "dwim" steht übrigens genau dafür: do what I mean.
+
+** find-file-other-window
+
+Um jetzt Dateien zu kopieren, öffnen wir dired (=M-x dired=) und führen die folgenden Schitte aus:
+
++ =M-x find-file-other-window=
++ Verzeichnis auswählen (=find-file-other-window= kann sowohl Dateien als auch Verzeichnisse öffnen)
+
+Das ausgewählte Verzeichnis wird in einem neuen Fenster geöffnet.
+
+** Kopieren
+
+Werden anschließend Dateien im einen dired-Fenster zum Kopieren markiert, wird als Ziel immer das ausgewählte Verzeichnis des anderen dired-Fensters vorausgewählt.
+
+Sehr praktisch.
