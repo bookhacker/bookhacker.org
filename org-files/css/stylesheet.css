@@ -259,3 +259,8 @@ code {
     font-size: 14px;
     color: #828282;
 }
+
+.icon {
+    padding-right: 5px;
+    vertical-align: middle;
+}
