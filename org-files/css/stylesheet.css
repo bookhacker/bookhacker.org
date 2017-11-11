@@ -115,12 +115,21 @@ footer {
     font-size: 15px;
     color: #828282;
     padding-bottom: 30px;
+    width: calc(35% - (30px / 2));
+}
+
+.footer-center {
+    float: left;
+    font-size: 15px;
+    color: #828282;
+    width: calc(35% - (30px / 2));
 }
 
 .footer-right {
-    float: right;
+    float: left;
     font-size: 15px;
     color: #828282;
+    width: calc(35% - (30px / 2));
 }
 
 body {
