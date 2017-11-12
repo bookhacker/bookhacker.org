@@ -1,0 +1,58 @@
+#+SETUPFILE: ../../org-templates/level-1.org
+#+TITLE: "modified"-timestamp einer Datei ändern
+#+STARTUP: showall
+#+DATE: <2017-11-12 So 20:10>
+
+#+BEGIN_PREVIEW
+Mein aktuelles Setup zur Erstellung dieser Webseite (hint: [[http://orgmode.org][org-mode]]) sortiert die Einträge nach dem "modified"-timestamp (dem Zeitpunkt der letzten Änderung). Das ist je nach Sichtweise unpraktisch, da upgedatete Artikel dadurch nach jeder Änderung automatisch nach oben wandern. "Je nachdem", denn dieses Verhalten kann auch gewünscht sein, wenn man seine Artikel nach dem Kriterium "Letztes Update:" sortieren will. Wie dem auch sei: Wer seine Zeitstempel unter Unixoidem ändern möchte, der kann das folgendermaßen tun:
+#+END_PREVIEW
+
+** modified-Zeitstempel einer Datei ändern mit =touch=
+
+Zur Änderung des modified-Zeitstempels einer Datei gibt es auf jedem unixoiden System den Befehl [[https://www.gnu.org/software/coreutils/manual/html_node/touch-invocation.html#touch-invocation][touch]]:
+
+#+BEGIN_SRC info
+13.4 ‘touch’: Change file timestamps
+====================================
+
+‘touch’ changes the access and/or modification times of the specified
+files.  Synopsis:
+
+     touch [OPTION]... FILE...
+#+END_SRC
+
+[Quelle: [[https://www.gnu.org/software/coreutils/manual/][GNU Coreutils]]]
+
+*** Drei Arten von Zeitstempel
+
+Unixoide Dateien kennen drei Arten von Zeitstempeln:
+
++ Access - Letzter Zeitpunkt, an dem die Datei gelesen wurde
++ Modify - Letzter Zeitpunkt, an dem die Datei - in diesem Fall der Inhalt der Datei - verändert wurde
++ Change - Letzter Zeitpunkt, an dem Metadaten der Datei geändert wurden (z. B. Berechtigungen)
+
+[Quelle: [[https://unix.stackexchange.com/questions/2464/timestamp-modification-time-and-created-time-of-a-file][unix.stackexchange.com]]]
+
+*** Zeitstempel ändern
+
+Möchte ich accessed und modified ändern, verwende ich
+
+#+BEGIN_SRC bash
+touch -a -m -t 201512180130.09 fileName.ext
+#+END_SRC
+
+Will ich lediglich modified ändern, lasse ich =-a= einfach weg:
+
+#+BEGIN_SRC bash
+touch -m -t 201512180130.09 fileName.ext
+#+END_SRC
+
+Die einzelnen Parameter bedeuten:
+
+- a = accessed
+- m = modified
+- t = timestamp - verwendet das [[CC]YY]MMDDhhmm[.ss] time format
+
+Um den Zeitstempel auf JETZT zu setzen, lässt man =-t= und =timestamp= einfach weg.
+
+[Quelle: [[https://unix.stackexchange.com/questions/118577/changing-a-files-date-created-and-last-modified-attributes-to-another-file][unix.stackexchange.com]]]
