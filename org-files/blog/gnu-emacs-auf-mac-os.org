@@ -1,7 +1,7 @@
 #+SETUPFILE: ../../org-templates/level-1.org
 #+TITLE: GNU Emacs auf Mac OS
 #+STARTUP: showall
-#+DATE: 2017-11-06 21:08
+#+DATE: <2017-11-05 So>
 
 #+BEGIN_PREVIEW
 Wer von Linux auf Mac OS umsteigt, muss sich bei GNU Emacs zunächst einige Sachen konfigurieren, ehe er wirklich arbeiten kann (andere Dinge sind einfach eine Frage der Umgewöhnung).
