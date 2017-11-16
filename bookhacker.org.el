@@ -141,6 +141,7 @@ relative link in the sitemap-publish function"
   <nav><ul>
     <li><a href=\"https://bookhacker.org/datenschutz.html\">Datenschutz</a></li>
     <li><a href=\"https://bookhacker.org/impressum.html\">Impressum</a></li>
+    <li><a href=\"https://bookhacker.org/about.html\">About</a></li>
   </ul></nav>
 </div>
 </header>"	 
@@ -197,6 +198,7 @@ relative link in the sitemap-publish function"
   <nav><ul>
     <li><a href=\"https://bookhacker.org/datenschutz.html\">Datenschutz</a></li>
     <li><a href=\"https://bookhacker.org/impressum.html\">Impressum</a></li>
+    <li><a href=\"https://bookhacker.org/about.html\">About</a></li>
   </ul></nav>
 </div>
 </header>"	 
