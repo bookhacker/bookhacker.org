@@ -1,0 +1,8 @@
+#+SETUPFILE: ../../org-templates/level-1.org
+#+TITLE: Lokale Info-Datei öffnen
+#+STARTUP: showall
+#+DATE: <2017-11-19 So>
+
+#+BEGIN_PREVIEW
+Um eine lokale .info-Datei zu öffnen, verwendet man das Tastenkürzel =Ctrl-u, Ctrl-h, i=. Anschließend wird man aufgefordert, die anzuzeigende Info-Datei auszuwählen.
+#+END_PREVIEW
